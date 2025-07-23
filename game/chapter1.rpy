@@ -68,6 +68,7 @@ label right_dialog_boy:
 
 label good_dialog_boy:
 
+    jump go_to_room
     return
 
 label wrong_dialog_boy:
