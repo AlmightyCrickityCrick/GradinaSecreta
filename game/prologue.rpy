@@ -7,6 +7,7 @@ label prologue:
     mother "Las-o pe Ayah să-i dea de mâncare. Am rochia nouă de la Paris de încercat!"
 
     call relatives_death
+    
     scene india_bungalow
 
     show sheriff

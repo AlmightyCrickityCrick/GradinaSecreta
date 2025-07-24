@@ -3,6 +3,10 @@ image india_bungalow_back_yard = im.Scale("india bungalow back yard.png",1920,10
 
 image uncle_house_outside = im.Scale("uncle house outside.png",1920,1080)
 image uncle_house_inside1 = im.Scale("uncle house inside 1.png",1920,1080)
+image uncle_house_inside2 = im.Scale("uncle house inside 2.png",1920,1080)
+image uncle_house_inside3 = im.Scale("uncle house inside 3.png",1920,1080)
+image uncle_house_inside4 = im.Scale("uncle house inside 4.png",1920,1080)
+image uncle_house_inside_door = im.Scale("uncle house inside door.png",1920,1080)
 image library1 = im.Scale("library 1.png",1920,1080)
 image uncle_simple_garden = im.Scale("uncle simple garden.png",1920,1080)
 image uncle_simple_garden_middle = im.Scale("uncle simple garden middle.png",1920,1080)

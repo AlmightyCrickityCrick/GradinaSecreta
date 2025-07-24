@@ -15,10 +15,19 @@ label arrival_to_uncles_house:
 
     scene uncle_house_outside
     
-    "I'm finally here"
+    show fl
+    "Penelope a ajuns în casa unchiului"
+    hide fl
+
+    jump get_into_uncles_house
+
+label get_into_uncles_house:
+    scene uncle_house_inside_door
+
+    "Ușa grea a conacului scrâșni când Penelope o deschise, ca un geamăt de durere. Aerul împuțit de praf și ceară veche o învălui, amestecându-se cu umbra lungă a serii. Pe pereți, portretele strămoșilor păreau să o privească cu milă - o musafiră nedorită în această casă de doliu."
 
     jump search_through_house
-    return
+
 
 screen find_smth:
     pass
