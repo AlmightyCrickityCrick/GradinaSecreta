@@ -38,16 +38,15 @@ label go_out_of_garden:
     return
 
 screen two_img_diff:
-
-    return
+    pass
 
 label meeting_robin:
 
     menu:
         "Desigur":
-
+            jump go_to_the_middle_of_garden
         "Pentru ce?":
-
+            jump bad_end
     return
 
 label go_to_the_middle_of_garden:

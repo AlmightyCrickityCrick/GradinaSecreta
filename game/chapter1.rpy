@@ -1,15 +1,17 @@
 label arrival_to_uncles_house:
 
+    scene uncle_house
+    
+    "I'm finally here"
+
     jump search_through_house
     return
 
 screen find_smth:
-
-    return
+    pass
 
 screen find_toys:
-
-    return
+    pass
 
 label search_through_house:
     show screen find_smth
@@ -26,7 +28,7 @@ label library:
 
     menu:
         "Este suspicios. Ma uit.":
-            jump
+            jump choose_book
         "Daca fac ceva, unchiul se va enerva":
             jump bad_end
 
