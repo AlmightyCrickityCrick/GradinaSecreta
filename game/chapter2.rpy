@@ -4,6 +4,7 @@ label go_to_room:
     return
 
 label maid_hall:
+    scene uncle_house_inside1
 
     menu:
         "Nu-i așa de greu, de aceea da":
@@ -18,6 +19,7 @@ label good_maid:
     return
 
 label find_garden_1:
+    scene uncle_simple_garden
 
     menu:
         "Intreaba":
@@ -33,7 +35,7 @@ label maid_uncle:
 
 label go_out_of_garden:
 
-    call screen two_img_diff
+    # call screen two_img_diff
     jump meeting_robin
     return
 
@@ -41,6 +43,7 @@ screen two_img_diff:
     pass
 
 label meeting_robin:
+    scene uncle_simple_garden
 
     menu:
         "Desigur":
@@ -50,6 +53,7 @@ label meeting_robin:
     return
 
 label go_to_the_middle_of_garden:
+    scene uncle_simple_garden_middle
 
     menu:
         "Hai":
@@ -59,6 +63,7 @@ label go_to_the_middle_of_garden:
     return
 
 label robin_and_bush:
+    scene bush
 
     menu:
         "Lasă. e un tufar simplu":
@@ -68,10 +73,12 @@ label robin_and_bush:
     return
 
 label find_hidden_garden:
-
+    scene secret_garden
+    "Ai gasit gradina secreta"
     return
 
 label go_back_in_house:
-
+    scene uncle_house_inside1
+    "Esti iarasi in casa"
     jump bad_end
     return
