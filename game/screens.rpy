@@ -300,6 +300,7 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start()
+            textbutton _("Order minigame") action Start('order_minigame')
 
         else:
 
