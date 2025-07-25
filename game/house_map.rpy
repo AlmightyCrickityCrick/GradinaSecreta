@@ -3,6 +3,13 @@ label house1:
     show screen explore_hall_one
     label explore_loop_one:
     $ renpy.pause(0.1, hard=True)
+
+    if current_room_one == 3:
+        if first_birou_entry:
+            "Ușa grea a biroului se deschide cu un foșnet prelung. Aerul miroase a pergament vechi și fum stins. Cărțile aliniază pereții ca niște martori tăcuți."
+            "În colțul opus, un dulap masiv, din lemn înnegrit, înghite lumina."
+            $ first_birou_entry = False
+
     jump explore_loop_one
 
 return

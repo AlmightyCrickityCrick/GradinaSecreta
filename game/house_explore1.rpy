@@ -1,8 +1,9 @@
 default current_room_one = 1
 default first_maid_click = True
 default first_room_exit = True
-default first_drawer_click = True
 default first_drawer_search = True
+default first_journal_search = True
+default first_birou_entry = True
 
 label bird:
     scene intro7
@@ -35,7 +36,7 @@ return
 
 label journal:
     scene intro1
-    "L.C."
+    "Coperta L.C."
     jump journal_open
 return
 
@@ -43,42 +44,35 @@ label journal_open:
     scene intro2
     "10 Iulie... Grădina noastră secretă a înflorit azi. Arhid spune că e periculos să o păzim, dar eu..."
     "Restul paginii era smulsă."
-    if first_drawer_search:
+    if first_journal_search:
         "Degetele i se înfiorară."
         Penelope "Ce ascundea acest loc?"
-
-#MINIGAME HOLDER
+        "Vrei să cauți toate obiectele și să afli ce legătură are jurnalul cu grădina secretă?"
         menu:
             "Continua cautarea.":
-                label harta:
-                    scene intro7
-                    "Harta"
-                    jump carte
-                return
-
-                label carte:
-                    scene intro8
-                    "Carte"
-                    jump panglica
-                return
-
-                label panglica:
-                    scene intro7
-                    "Panglica"
-                    jump understanding
-                return
-
-                label understanding:
-                    $ first_drawer_search = False
-                    scene intro8
-                    Penelope "Toate se leagă... această hartă, carte, panglica... toate duc spre același loc – biblioteca. Dacă cineva a ascuns ceva, acolo e răspunsul."
-                return
+                $ first_journal_search = False
+                "Grădina secretă?... interesant... Trebuie să găsesc mai multă informație."
         
             "Inchide jurnalul si asteapta dimineata.":
                 Penelope "E doar un vis. Un vis scris pe hârtie veche. N-are rost să mă agăț de umbre..."
+                jump restart
     else:
-        jump understanding
+        "Grădina secretă?... interesant... Trebuie să găsesc mai multă informație."
 return
+
+label drawer:
+    scene intro4
+
+    if first_drawer_search:
+        "Apropiindu-se cu grijă de unul dintre numeroasele sertare, ea a tras de mâner. Balamalele scârțâiau ușor, ca și cum ar fi încercat să-și ascundă secretul."
+        "Ai descoperit un fragment misterios în jurnal."
+        "Pentru a înțelege mesajul, trebuie să aduni toate indiciile ascunse în cameră înainte ca lumânarea să se stingă."
+        "Ai 30 de secunde. Fiecare obiect te apropie de înțelegerea misterului. Dacă nu reușești, indiciile vor rămâne pierdute în întuneric."
+        $ first_drawer_search = False
+#MINIGAME
+
+return
+
 
 screen explore_hall_one():
     
@@ -92,6 +86,13 @@ screen explore_hall_one():
             xpos 300
             ypos 300
             action Function(renpy.call_in_new_context, "bird")
+
+        imagebutton:
+            idle "robin.png"
+            hover "east_hover.png"
+            xpos 600
+            ypos 300
+            action Function(renpy.call_in_new_context, "journal")
 
     elif current_room_one == 2:
         add "intro2.png"
@@ -120,18 +121,11 @@ screen explore_hall_one():
     elif current_room_one == 3:
         add "intro3.png"
 
-        if first_drawer_click:
-            imagebutton:
-                idle "drawer.png"
-                xpos 900
-                ypos 300
-                action SetVariable("first_drawer_click", False)
-        else:
-            imagebutton:
-                idle "drawer broken.png"
-                xpos 900
-                ypos 300
-                action Function(renpy.call_in_new_context, "journal")
+        imagebutton:
+            idle "drawer.png"
+            xpos 900
+            ypos 300
+            action Function(renpy.call_in_new_context, "drawer")
 
     #If we're NOT in the last room, show the right arrow
     if current_room_one < 3:

@@ -21,9 +21,11 @@ label library:
                         "Cartea alunecă din mâna ei – ca și cum o forță nevăzută refuza să fie citită."
                         jump handle
 
-                    "Carte verde.":
+                    "Carte albastra.":
                         $ first_book_choice = False
                         "Cartea alunecă din mâna ei – ca și cum o forță nevăzută refuza să fie citită."
+                        "Căzu pe podea cu un ecou stins, iar în genunchi, când fata se aplecă să o ridice, observă ceva ce nu văzuse până atunci."
+                        "Un mâner de fier, ascuns într-o cavitate sub raft. Rece ca piatra udă."
                         jump handle
 
             "Nu e treaba ta. Pleaca si intoarce-te mai tarziu.":
@@ -36,7 +38,9 @@ label handle:
     scene intro4
 
     Penelope "Asta n-are ce căuta aici..."
-    "Trage de maner."
+    "Trage."
+    "Un zgomot gutural de metal pe lemn umple biblioteca. Un perete lateral se dă la o parte, scrâșnind din toate încheieturile."
+    "În spatele lui – un coridor îngust, care duce spre o cameră slab luminată."
     jump colin
 return
 
@@ -77,7 +81,7 @@ label colin:
         "Băiatul o fixează. Îi fuge privirea de la fața ei la coperta verde, apoi înapoi."
         Colin "Aia nu... aia n-avea ce să fie scoasă. De ce ai ales tocmai pe ea?"
         Penelope "A căzut singură..."
-        Colin "Toate cărțile cad. Nu toate trebuiau ridicate."
+        Colin "Toate cărțile cad. Nu toate trebuie ridicate."
         "Băiatul se închide. Fruntea i se încrețește. Își trage pătură mai sus."
         Colin "Dacă nu mai vrei nimic, pleacă. Te rog."
 
