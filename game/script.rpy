@@ -18,24 +18,29 @@ image secret_garden = im.Scale("secret garden.png",1920,1080)
 image green_boook = im.Scale("green book.png",200,400)
 image red_boook = im.Scale("red book.png",200,400)
 
+#HOLDERS
+image intro1 = "intro1.png"
+image intro2 = "intro2.png"
+image intro3 = "intro3.png"
+image intro4 = "intro4.png"
+image intro5 = "intro5.png"
+image intro6 = "intro6.png"
+image intro7 = "intro7.png"
+image intro8 = "intro8.png"
+
 define audio.background_song_0 = "background song 0.mp3"
 define audio.background_song_1 = "background song 1.mp3"
 define audio.whispers_library = "whispers library.mp3"
 
-define mother = Character("Mama", color = "#ffffff")
-define fl = Character("Penelope", color = "#ffffff")
-define sheriff = Character("Ofițer", color = "#ffffff")
+define Penelope = Character(name = "Penelope", color = "ffffff")
+define Mama = Character(name = "Mama", color = "ffffff")
+define Ofiter = Character(name = "Ofiter", color = "ffffff")
+define Maid = Character(name = "Maid", color = "ffffff")
+define Robin = Character(name = "Robin", color = "ffffff")
+define Craven = Character(name = "Domnul Craven", color = "ffffff")
+define Colin = Character(name = "Colin", color = "ffffff")
 
 # The game starts here.
 
 label start:
-
-    queue music background_song_0 volume 0.1
-
-    call prologue
-
-    stop music fadeout 1.0
-
-    queue music background_song_1 volume 0.1
-
-    jump arrival_to_uncles_house
+    jump prologue
