@@ -1,11 +1,12 @@
 default is_over2 = False
+default is_win2 = False
 default inventory = []
 
 init python:
     import pygame
 
     def get_scaled_image(name, width, height):
-        return im.Scale(name, width, height)
+        return Transform(name, size=(width, height))
 
     class SearchEl(renpy.Displayable):
         def __init__(self, elements):
@@ -18,34 +19,40 @@ init python:
         def render(self, width, height, st, at):
             r = renpy.Render(self.width, self.height)
 
-            for i, el in enumerate(self.elements):
-                # element = renpy.render(get_scaled_image(el[0][0], el[0][1], el[0][2]), el[1], el[2], st, at)
-                r.blit(element,(el[3],el[4]))
-
             st_p = 50
+
+            text_element = renpy.render(Text(f"Time remaining: {5 - st}"), 1000, 50, st, at)
+            r.blit(text_element,(20,20))
+
+            for i, el in enumerate(self.elements):
+                element = renpy.render(get_scaled_image(el[0][0], el[0][1], el[0][2]), el[1], el[2], st, at)
+                r.blit(element,(el[3],el[4]))
             
             for i, el in enumerate(globals() ['inventory']):
                 element = renpy.render(get_scaled_image(el[0][0], el[0][1], el[0][2]), el[1], el[2], st, at)
-                r.blit(element,(st_p, 20))
+                r.blit(element,(st_p, 100))
                 st_p += 50 + el[1]
+            
+            if st >= 5:
+                globals() ['is_over2'] = True
+                renpy.timeout(0)
 
             renpy.redraw(self, 0)
 
             return r
 
         def event(self, ev, x, y, st):
-            is_over = False
             if ev.type == pygame.MOUSEBUTTONDOWN:
                 for el in self.elements:
                     if el[3] < x and el[4] < y and el[1] + el[3] > x and el[4] + el[2] > y:
-                        globals() ['inventory'] += el
+                        globals()['inventory'].append(el)
                         self.elements.remove(el)
                         if len(self.elements) == 0:
-                            is_over = True
+                            globals() ['is_over2'] = True
+                            globals() ['is_win2'] = True
             
-            if is_over:
-                globals() ['is_over2'] = True
-                return is_over
+            if globals() ['is_over2']:
+                return globals() ['is_over2']
             else:
                 raise renpy.IgnoreEvent()
 
@@ -69,4 +76,7 @@ label search_minigame:
     call screen search_game
 
     if is_over2 == True:
-        "Ai gasit toate lucrurile! [inventory]"
+        if is_win2 == True:
+            "Ai gasit toate lucrurile!"
+        else:
+            "Timpul a expirat!"
