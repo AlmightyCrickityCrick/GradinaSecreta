@@ -1,0 +1,72 @@
+default is_over2 = False
+default inventory = []
+
+init python:
+    import pygame
+
+    def get_scaled_image(name, width, height):
+        return im.Scale(name, width, height)
+
+    class SearchEl(renpy.Displayable):
+        def __init__(self, elements):
+            super().__init__(self)
+            self.width = 1920
+            self.height = 1080
+
+            self.elements = elements
+
+        def render(self, width, height, st, at):
+            r = renpy.Render(self.width, self.height)
+
+            for i, el in enumerate(self.elements):
+                # element = renpy.render(get_scaled_image(el[0][0], el[0][1], el[0][2]), el[1], el[2], st, at)
+                r.blit(element,(el[3],el[4]))
+
+            st_p = 50
+            
+            for i, el in enumerate(globals() ['inventory']):
+                element = renpy.render(get_scaled_image(el[0][0], el[0][1], el[0][2]), el[1], el[2], st, at)
+                r.blit(element,(st_p, 20))
+                st_p += 50 + el[1]
+
+            renpy.redraw(self, 0)
+
+            return r
+
+        def event(self, ev, x, y, st):
+            is_over = False
+            if ev.type == pygame.MOUSEBUTTONDOWN:
+                for el in self.elements:
+                    if el[3] < x and el[4] < y and el[1] + el[3] > x and el[4] + el[2] > y:
+                        globals() ['inventory'] += el
+                        self.elements.remove(el)
+                        if len(self.elements) == 0:
+                            is_over = True
+            
+            if is_over:
+                globals() ['is_over2'] = True
+                return is_over
+            else:
+                raise renpy.IgnoreEvent()
+
+
+
+screen search_game:
+    
+    default searchEl = SearchEl([ \
+        [("teddy bear.png",100,100),100,100,100,100], \
+        [("teddy bear.png",100,100),100,100,200,300], \
+        [("teddy bear.png",100,100),100,100,300,400], \
+        [("teddy bear.png",100,100),100,100,400,500], \
+        [("teddy bear.png",100,100),100,100,500,600] \
+        ])
+    add "uncle_simple_garden_middle"
+
+    add searchEl
+
+
+label search_minigame:
+    call screen search_game
+
+    if is_over2 == True:
+        "Ai gasit toate lucrurile! [inventory]"

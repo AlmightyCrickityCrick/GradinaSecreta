@@ -5,7 +5,7 @@ default first_drawer_click = True
 default first_drawer_search = True
 
 label bird:
-    scene intro7
+    # scene intro7
 
     Robin "Cip-cip!"
     Penelope "Ayah spunea că păsările aduc vești..."
@@ -13,7 +13,7 @@ label bird:
 return
 
 label uncle_first_encounter:
-    scene intro7
+    # scene intro7
 
     show Craven
     Craven "Ai inteles regulile?"
@@ -24,7 +24,7 @@ label uncle_first_encounter:
 return
 
 label maid_about_uncle:
-    scene intro7
+    # scene intro7
     
     show Maid at Position(xpos = 300, ypos = 1500)
     Maid "Domnul Craven n-a mai vorbit cu nimeni de când Doamna Lily a murit... Nici măcar cu băiatul."
@@ -51,7 +51,7 @@ label journal_open:
         menu:
             "Continua cautarea.":
                 label harta:
-                    scene intro7
+                    # scene intro7
                     "Harta"
                     jump carte
                 return
@@ -63,7 +63,7 @@ label journal_open:
                 return
 
                 label panglica:
-                    scene intro7
+                    # scene intro7
                     "Panglica"
                     jump understanding
                 return
