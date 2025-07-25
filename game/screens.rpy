@@ -301,6 +301,8 @@ screen navigation():
 
             textbutton _("Start") action Start()
             textbutton _("Order minigame") action Start('order_minigame')
+            textbutton _("Search minigame") action Start('search_minigame')
+            textbutton _("Differences minigame") action Start('dif_minigame')
 
         else:
 

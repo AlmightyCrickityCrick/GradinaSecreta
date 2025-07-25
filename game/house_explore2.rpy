@@ -4,7 +4,7 @@ default carte_rosie = False
 default first_book_choice = True
 
 label library:
-    scene intro7
+    # scene intro7
 
     if first_book_choice:
 
