@@ -43,26 +43,15 @@ init python:
             finished_pieces += 1
             renpy.restart_interaction()  # Refresh the screen to update the counter
             if finished_pieces == len(page_pieces):
-                renpy.jump("reassemble_complete")
+                renpy.end_interaction("complete")
         else:
             renpy.notify("No match: {} vs {}".format(piece_num, target_num))
 
 
 label puzzle_minigame:
-    scene room
-    Penelope "Oh no, it's been shredded to pieces!"
-    Penelope "I'll have to reassemble it piece by piece."
-    Penelope "Let's do it!"
-    $ setup_puzzle()
-    $ finished_pieces = 0
-    call screen reassemble_puzzle
-    return
-
-
+    jump camera_ep
 
 screen reassemble_puzzle:
-    add "uncle house outside.png"
-
     # Show progress counter
     text "Pieces placed: [finished_pieces]/[len(page_pieces)]" xpos 50 ypos 50 size 30 color "#ffffff"
 
@@ -98,5 +87,4 @@ screen reassemble_puzzle:
 
 
 label reassemble_complete:
-    Penelope "I did it!"
     return

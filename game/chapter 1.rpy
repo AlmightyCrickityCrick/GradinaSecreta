@@ -81,6 +81,12 @@ label camera_ep:
     "Penelope deschise ușa încet. Lumina de pe fereastră curgea peste podeaua de lemn, iar perdelele albe fâlfâiau în adiere. "
     "Camera părea suspendată în timp. Pe pereți, fluturii din rame stăteau nemișcați, ca niște amintiri uitate."
     "Se apropie de noptieră, fără să știe ce caută. Sertarul cedă cu un scârțâit blând. Înăuntru, un jurnal legat în piele șifonată strălucea slab în lumina lunii. "
+
+    $ setup_puzzle()
+    $ finished_pieces = 0
+
+    call screen reassemble_puzzle
+    
     "Pe copertă, inițialele L.C. erau gravate cu cerneală roșie - ca sângele uscat. "
     "10 Iulie... Grădina noastră secretă a înflorit azi. Arhid spune că e periculos să o păzim, dar eu... - restul paginii era smulsă. "
     "Degetele i se înfiorară. Ce ascundea acest loc? "
@@ -124,7 +130,6 @@ label sunet:
 
     jump dulap
 
-#joc din sertar 
 label sertar:
     scene sertar
     call screen search_game
