@@ -67,15 +67,15 @@ init python:
 screen order_game:
     
     default clickableEl = ClickableEl([ \
-        [im.Scale("teddy bear.png",250,250),250,250,100,400], \
-        [im.Scale("teddy bear.png",250,250),250,250,350,150], \
-        [im.Scale("teddy bear.png",250,250),250,250,650,225], \
-        [im.Scale("teddy bear.png",250,250),250,250,900,300], \
-        [im.Scale("teddy bear.png",250,250),250,250,500,600], \
-        [im.Scale("teddy bear.png",250,250),250,250,1050,700], \
-        [im.Scale("teddy bear.png",250,250),250,250,1500,300], \
-        [im.Scale("teddy bear.png",250,250),250,250,1300,580], \
-        [im.Scale("teddy bear.png",250,250),250,250,150,700]
+        [im.Scale("robin_2.png",250,250),250,250,100,400], \
+        [im.Scale("robin_2.png",250,250),250,250,350,150], \
+        [im.Scale("robin_2.png",250,250),250,250,650,225], \
+        [im.Scale("robin_2.png",250,250),250,250,900,300], \
+        [im.Scale("robin_2.png",250,250),250,250,500,600], \
+        [im.Scale("robin_2.png",250,250),250,250,1050,700], \
+        [im.Scale("robin_2.png",250,250),250,250,1500,300], \
+        [im.Scale("robin_2.png",250,250),250,250,1300,580], \
+        [im.Scale("robin_2.png",250,250),250,250,150,700]
         ])
 
     add clickableEl
