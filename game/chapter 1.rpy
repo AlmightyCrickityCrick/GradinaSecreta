@@ -14,6 +14,7 @@ image camera lui colin = im.Scale("camera lui colin.png", 1920, 1080)
 image bad_end = im.Scale("bad end.png", 1920, 1080)
 image holl= im.Scale("holl.png", 1920, 1080)
 image corridor_spre_colin= im.Scale("corridor spre Colin.png", 1920, 1080)
+image mamad = im.Scale("mamad.png", 1920, 1080)
 
 define audio.usa = "usa.mp3"
 define audio.chirp = "chirp.mp3"
@@ -34,12 +35,10 @@ label pre_istorie:
 
     "Penelope Lennox nu a fost niciodată un copil dorit."
     "Sub soarele orbitor al Indiei, trăia ca un obiect uitat într-un sertar – văzută, dar niciodată aleasă."
-    jump dulap
     jump mama
 
 label mama:
-
-    scene intro2
+    scene mamad
     Mama "Las-o pe Ayah să-i dea de mâncare. Am rochia nouă de la Paris de încercat!"
 
     jump holera
