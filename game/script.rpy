@@ -40,14 +40,14 @@ define Robin = Character(name = "Robin", color = "ffffff")
 define Craven = Character(name = "Domnul Craven", color = "ffffff")
 define Colin = Character(name = "Colin", color = "ffffff")
 
-image Craven img1 = im.Scale('characters/craven.png',1200,1000)
-image Craven img2 = im.Scale('characters/craven1.png',1200,1000)
-image Colin img1 = im.Scale('characters/colin.png',1200,1000)
-image Colin img2 = im.Scale('characters/colin book.png',1200,1000)
-image Penelope img1 = im.Scale('characters/penelope.png',1200,1000)
-image Penelope img2 = im.Scale('characters/penelope q.png',1200,1000)
-image Robin = im.Scale('characters/robin.png',1200,1000)
-image Servitoare img1 = im.Scale('characters/serv.png',1200,1000)
+image Craven img1 = im.Scale('characters/craven.png',1050,1000)
+image Craven img2 = im.Scale('characters/craven1.png',1050,1000)
+image Colin img1 = im.Scale('characters/colin.png',1050,1000)
+image Colin img2 = im.Scale('characters/colin book.png',1050,1000)
+image Penelope img1 = im.Scale('characters/penelope.png',1050,1000)
+image Penelope img2 = im.Scale('characters/penelope q.png',1050,1000)
+image Robin = im.Scale('characters/robin.png',1050,1000)
+image Servitoare img1 = im.Scale('characters/serv.png',1050,1000)
 
 # The game starts here.
 
