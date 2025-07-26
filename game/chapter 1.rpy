@@ -17,7 +17,6 @@ image corridor_spre_colin= im.Scale("corridor spre Colin.png", 1920, 1080)
 
 
 label pre_istorie:
-    jump carte_rosie
     scene casa_parinteasca
 
     "Penelope Lennox nu a fost niciodată un copil dorit."
