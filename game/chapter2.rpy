@@ -1,5 +1,5 @@
 image corridor = im.Scale("corridor.png", 1920, 1080) 
-image gradina_veranda = im.Scale("diferente/gradina veranda.png", 1920, 1080) 
+image gradina_veranda = im.Scale("gradina_veranda.png", 1920, 1080) 
 image gradina = im.Scale("gradina.png", 1920, 1080) 
 image usa_tufis = im.Scale("usa in tufis.png", 1920, 1080) 
 image gradina_secreta = im.Scale("gradina secreta.png", 1920, 1080) 
@@ -76,6 +76,8 @@ label veranda:
             "Ai gasit toate diferentele!"
         else:
             "Timpul a expirat!/Ai facut 5 greseli!"
+
+    scene gradina_veranda
 
 # a doua fotografie cu diferente se numeste "gradina veranda joc"
 
