@@ -37,8 +37,8 @@ label ajutor:
 
 
 label nu_ajuti:
-    "Penelope trecu mai departe fără să spună nimic. Tălpile ei tăcură peste podeaua rece.
-În urmă, servitoarea rămase îngenuncheată, cu rușine pe obraz și ochii în podea."
+    """Penelope trecu mai departe fără să spună nimic. Tălpile ei tăcură peste podeaua rece.
+    În urmă, servitoarea rămase îngenuncheată, cu rușine pe obraz și ochii în podea."""
     jump corridor 
 
 

@@ -298,11 +298,11 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
-
             textbutton _("Start") action Start()
             textbutton _("Order minigame") action Start('order_minigame')
             textbutton _("Search minigame") action Start('search_minigame')
             textbutton _("Differences minigame") action Start('dif_minigame')
+            textbutton _("Puzzle minigame") action Start('puzzle_minigame')
 
         else:
 
