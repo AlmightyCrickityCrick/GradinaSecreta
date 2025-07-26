@@ -24,9 +24,6 @@ init python:
         def render(self, width, height, st, at):
             r = renpy.Render(self.width, self.height)
 
-            # text_element = renpy.render(Text(f"st={st} at={at} n={self.n}"), 170, 100, st, at)
-            # r.blit(text_element,(0,0))
-
             time = st - self.start_time
 
             for i, el in enumerate(self.elements):

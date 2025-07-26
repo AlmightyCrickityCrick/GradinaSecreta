@@ -14,6 +14,10 @@ init python:
             self.width = 1920
             self.height = 1080
 
+            for element in elements:
+                element[3] = renpy.random.randint(200, 1300)
+                element[4] = renpy.random.randint(170, 750)
+
             self.elements = elements
 
         def render(self, width, height, st, at):
@@ -21,7 +25,7 @@ init python:
 
             st_p = 50
 
-            text_element = renpy.render(Text(f"Time remaining: {5 - st}"), 1000, 50, st, at)
+            text_element = renpy.render(Text(f"Time remaining: {10 - st}"), 1500, 50, st, at)
             r.blit(text_element,(20,20))
 
             for i, el in enumerate(self.elements):
@@ -30,10 +34,10 @@ init python:
             
             for i, el in enumerate(globals() ['inventory']):
                 element = renpy.render(get_scaled_image(el[0][0], el[0][1], el[0][2]), el[1], el[2], st, at)
-                r.blit(element,(st_p, 100))
+                r.blit(element,(st_p, 50))
                 st_p += 50 + el[1]
             
-            if st >= 5:
+            if st >= 10:
                 globals() ['is_over2'] = True
                 renpy.timeout(0)
 
@@ -62,14 +66,14 @@ screen search_game:
     
     $ globals()['inventory'] = []
     default searchEl = SearchEl([ \
-        [("sertar/carte.png",100,100),100,100,100,100], \
-        [("sertar/cerneala.png",100,100),100,100,200,300], \
-        [("sertar/fotografie.png",100,100),100,100,300,400], \
-        [("sertar/harta.png",100,100),100,100,400,500], \
-        [("sertar/lenta.png",100,100),100,100,400,500], \
-        [("sertar/pana.png",100,100),100,100,400,500], \
-        [("sertar/scrisori.png",100,100),100,100,400,500], \
-        [("sertar/timbru.png",100,100),100,100,500,600] \
+        [("sertar/carte.png",250,250),250,250,250,250], \
+        [("sertar/cerneala.png",250,250),250,250,200,300], \
+        [("sertar/fotografie.png",250,250),250,250,300,400], \
+        [("sertar/harta.png",250,250),250,250,400,500], \
+        [("sertar/lenta.png",250,250),250,250,400,500], \
+        [("sertar/pana.png",250,250),250,250,400,500], \
+        [("sertar/scrisori.png",250,250),250,250,400,500], \
+        [("sertar/timbru.png",250,250),250,250,500,600] \
         ])
 
     add searchEl

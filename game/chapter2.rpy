@@ -113,6 +113,9 @@ label gradina:
     scene gradina
 
     "Robinul zboară scurt, apoi se așază. Zboară din nou. Se oprește. De parcă ar cunoaște drumul mai bine decât oricine."
+
+    
+
     "În cele din urmă, se oprește lângă un tufiș mare și des, cu frunze care se mișcă fără vânt."
 
     "Cauți ceva în tufiș?"
