@@ -67,21 +67,18 @@ init python:
 screen order_game:
     
     default clickableEl = ClickableEl([ \
-        [im.Scale("teddy bear.png",100,100),100,100,100,100], \
-        [im.Scale("teddy bear.png",100,100),100,100,200,300], \
-        [im.Scale("teddy bear.png",100,100),100,100,300,400], \
-        [im.Scale("teddy bear.png",100,100),100,100,400,500], \
-        [im.Scale("teddy bear.png",100,100),100,100,500,600] \
+        [im.Scale("teddy bear.png",250,250),250,250,100,400], \
+        [im.Scale("teddy bear.png",250,250),250,250,350,150], \
+        [im.Scale("teddy bear.png",250,250),250,250,650,225], \
+        [im.Scale("teddy bear.png",250,250),250,250,900,300], \
+        [im.Scale("teddy bear.png",250,250),250,250,500,600], \
+        [im.Scale("teddy bear.png",250,250),250,250,1050,700], \
+        [im.Scale("teddy bear.png",250,250),250,250,1500,300], \
+        [im.Scale("teddy bear.png",250,250),250,250,1300,580], \
+        [im.Scale("teddy bear.png",250,250),250,250,150,700]
         ])
 
-    add "uncle_house_inside1"
     add clickableEl
 
 label order_minigame:
-    call screen order_game
-
-    if is_over == True:
-        if is_win == True:
-            "Ai castigat"
-        else:
-            "Ai pierdut"
+    jump gradina

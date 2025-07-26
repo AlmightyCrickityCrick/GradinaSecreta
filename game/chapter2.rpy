@@ -114,7 +114,11 @@ label gradina:
 
     "Robinul zboară scurt, apoi se așază. Zboară din nou. Se oprește. De parcă ar cunoaște drumul mai bine decât oricine."
 
-    
+    call screen order_game
+
+    if is_over == True:
+        if is_win == False:
+            jump gradina
 
     "În cele din urmă, se oprește lângă un tufiș mare și des, cu frunze care se mișcă fără vânt."
 
