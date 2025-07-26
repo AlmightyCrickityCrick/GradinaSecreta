@@ -17,7 +17,6 @@ image corridor_spre_colin= im.Scale("corridor spre Colin.png", 1920, 1080)
 
 
 label pre_istorie:
-    jump carte_rosie
     scene casa_parinteasca
 
     "Penelope Lennox nu a fost niciodată un copil dorit."
@@ -120,7 +119,7 @@ label sunet:
     menu:
         "Da - Mergi să cauți sursa sunetului.":
             jump dulap
-        "Mi - Nu e treaba ta. Pleacă și întoarce-te mai târziu.":
+        "Nu e treaba ta. Pleacă și întoarce-te mai târziu.":
             jump nu_ea_treaba_ta
 
     jump dulap
