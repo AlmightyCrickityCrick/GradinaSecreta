@@ -1,8 +1,10 @@
 image corridor = im.Scale("corridor.png", 1920, 1080) 
-image gradina_veranda = im.Scale("gradina veranda.png", 1920, 1080) 
+image gradina_veranda = im.Scale("diferente/gradina veranda.png", 1920, 1080) 
 image gradina = im.Scale("gradina.png", 1920, 1080) 
 image usa_tufis = im.Scale("usa in tufis.png", 1920, 1080) 
 image gradina_secreta = im.Scale("gradina secreta.png", 1920, 1080) 
+image diferente = im.Scale("diferente1.png", 1920, 1080) 
+
 
 label corridor:
     
@@ -65,7 +67,10 @@ label veranda:
     "În prima zi, Penelope o zărise doar cu coada ochiului — O grădină mare, ca din poveste. Astăzi însă... era altfel."
 
 # jocul - gaseste 7 diferente 
+    scene diferente
+
 # a doua fotografie cu diferente se numeste "gradina veranda joc"
+
 
     "Un fâlfâit scurt. Un tril vesel, aproape ironic."
     "Pe balustrade, în bătaia soarelui, stă același robin roșu pe care Penelope îl văzuse în prima zi."
