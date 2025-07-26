@@ -3,7 +3,7 @@ image gradina_veranda = im.Scale("diferente/gradina veranda.png", 1920, 1080)
 image gradina = im.Scale("gradina.png", 1920, 1080) 
 image usa_tufis = im.Scale("usa in tufis.png", 1920, 1080) 
 image gradina_secreta = im.Scale("gradina secreta.png", 1920, 1080) 
-image diferente = im.Scale("diferente1.png", 1920, 1080) 
+image diferente = im.Scale("diferente/diferente1.png", 1920, 1080) 
 
 
 label corridor:
@@ -68,6 +68,14 @@ label veranda:
 
 # jocul - gaseste 7 diferente 
     scene diferente
+
+    call screen dif_game
+
+    if is_over3 == True:
+        if is_win3 == True:
+            "Ai gasit toate diferentele!"
+        else:
+            "Timpul a expirat!/Ai facut 5 greseli!"
 
 # a doua fotografie cu diferente se numeste "gradina veranda joc"
 

@@ -17,9 +17,7 @@ init python:
         def render(self, width, height, st, at):
             r = renpy.Render(self.width, self.height)
 
-            st_p = 50
-
-            text_element = renpy.render(Text(f"Time remaining: {5 - st}"), 1000, 50, st, at)
+            text_element = renpy.render(Text(f"Time remaining: {60 - st}"), 1000, 50, st, at)
             r.blit(text_element,(20,20))
 
             text_element = renpy.render(Text(f"Mistakes left: {5 - self.mistakes}"), 1000, 50, st, at)
@@ -29,7 +27,7 @@ init python:
                 element = renpy.render(im.Scale("circle.png",el[0],el[1]), el[0], el[1], st, at)
                 r.blit(element,(el[2],el[3]))
             
-            if st >= 5 or self.mistakes >= 5:
+            if st >= 60 or self.mistakes >= 5:
                 globals() ['is_over3'] = True
                 renpy.timeout(0)
 
@@ -58,24 +56,18 @@ init python:
                 raise renpy.IgnoreEvent()
 
 screen dif_game:
-    add "uncle_house_outside"
-
     default difEL = DifEl([ \
-        [100,100,100,100], \
-        [100,100,200,300], \
-        [100,100,300,400], \
-        [100,100,400,500], \
-        [100,100,500,600] \
+        [40,45,1340,255], \
+        [120,50,1320,200], \
+        [220,40,1290,780], \
+        [50,235,1050,550], \
+        [130,80,1700,800], \
+        [55,50,1830,830], \
+        [70,70,1185,200] \
     ])
 
     add difEL
 
 
 label dif_minigame:
-    call screen dif_game
-
-    if is_over3 == True:
-        if is_win3 == True:
-            "Ai gasit toate diferentele!"
-        else:
-            "Timpul a expirat!/Ai facut 5 greseli!"
+    jump veranda
