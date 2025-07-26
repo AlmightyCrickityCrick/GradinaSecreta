@@ -46,8 +46,8 @@ image Colin img1 = im.Scale('characters/colin.png',850,800)
 image Colin img2 = im.Scale('characters/colin book.png',850,800)
 image Penelope img1 = im.Scale('characters/penelope.png',850,800)
 image Penelope img2 = im.Scale('characters/penelope q.png',850,800)
-image Robin = im.Scale('characters/robin.png')
-image Servitoare img1 = im.Scale('characters/serv.png',1050,1000)
+image Robin = 'characters/robin.png'
+image Servitoare img1 = im.Scale('characters/servit.png',1050,1000)
 
 # The game starts here.
 
