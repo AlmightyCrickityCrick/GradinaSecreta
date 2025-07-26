@@ -35,6 +35,7 @@ label pre_istorie:
 
     "Penelope Lennox nu a fost niciodată un copil dorit."
     "Sub soarele orbitor al Indiei, trăia ca un obiect uitat într-un sertar – văzută, dar niciodată aleasă."
+    jump dulap
     jump mama
 
 label mama:
@@ -95,6 +96,8 @@ label corridor_cu_usa:
     show Servitoare img1
     Servitoare"El n-a mai vorbit cu nimeni de când Doamna Lily a murit... Nici măcar cu băiatul."
     Servitoare "Aici vei sta de-acum."
+    hide Servitoare img1
+    hide Penelope img1
 
 label camera_ep:
     scene camera_ep
@@ -108,8 +111,11 @@ label camera_ep:
     call screen reassemble_puzzle
     
     play audio hartia
+    show Penelope img1
     "Pe copertă, inițialele L.C. erau gravate cu cerneală roșie - ca sângele uscat. "
     "10 Iulie... Grădina noastră secretă a înflorit azi. Arhid spune că e periculos să o păzim, dar eu... - restul paginii era smulsă. "
+    hide Penelope img1
+    show Penelope img2
     "Degetele i se înfiorară. Ce ascundea acest loc? "
     stop audio
 
@@ -119,27 +125,34 @@ label camera_ep:
             jump ce_inseamna
         "Nu – Închide jurnalul și așteaptă dimineața.":
             jump nu_intereseaza
+    hide Penelope img2
 
 label nu_intereseaza:
+    show Penelope img1
     Penelope "E doar un vis. Un vis scris pe hârtie veche. N-are rost să mă agăț de umbre..."
     jump casa
 
 label ce_inseamna:
+    show Penelope img1
     Penelope "Grădina secretă?... interesant... Trebuie să găsesc mai multă informație."
+    hide Penelope img1
     jump birou
 
 label birou:
     scene birou
     play audio usa_birou
     "Ușa bine-uleiată a biroului alunecă în cadru cu un șuierat abia auzit. Aerul miroase a pergament vechi și fum stins. Cărțile aliniază pereții ca niște martori tăcuți. În colțul opus, un dulap masiv, din lemn înnegrit, înghite lumina. "
+    show Penelope img1
     "Apropiindu-se cu grijă de unul dintre numeroasele sertare, ea a tras de mâner."
     "Balamalele scârțâiau ușor, ca și cum ar fi încercat să-și ascundă secretul."
+    hide Penelope img1
     jump sertar
 
 label sunet:
     scene birou
     stop music fadeout 1.0
     queue music pian
+    show Penelope img2
     "Și... acolo. Un sunet."
     "Nu un suspin. Nu un foșnet."
     "O melodie"
@@ -152,7 +165,7 @@ label sunet:
             jump dulap
         "Nu e treaba ta. Pleacă și întoarce-te mai târziu.":
             jump nu_ea_treaba_ta
-
+    hide Penelope img2
     jump dulap
 
 label sertar:
@@ -165,44 +178,54 @@ label sertar:
             "Ai gasit toate lucrurile!"
         else:
             "Timpul a expirat!"
-
     jump sunet
+
 
 label dulap:
     scene dulap
+    show Penelope img1
     "Penelope trecu cu degetele peste cotoarele prăfuite. Lemnul suspina la fiecare atingere, parcă păstrând în el poveștile celor care atinseseră rafturile înaintea ei."
     "Apoi le văzu"
     "O carte roșie, groasă, legată în piele, cu titlul șters de vreme – parcă bătută de ploi și sânge."
     "Una albastră, subțire, de un albastru aprins, cu broderie aurie și miros de frunze uscate."
+    hide Penelope img1
+    show Penelope img2
     Penelope "Una dintre ele trebuie să fie cheia. Dar care..."
     menu:
-        "Cartea roșie": # + points
+        "Cartea roșie":
             jump carte_rosie 
         "Cartea albastră":
             jump carte_albastra
 
 label nu_ea_treaba_ta:
     scene birou
+    hide Penelope img2
+    show Penelope img1
     "Unele uși rămân închise dintr-un motiv. Poate... poate încă nu sunt pregătită."
+    hide Penelope img1
     jump casa 
 
 label carte_rosie:
     "Cartea alunecă din mâna ei – ca și cum o forță nevăzută refuza să fie citită."
     "Căzu pe podea cu un ecou stins, iar în genunchi, când fata se aplecă să o ridice, observă ceva ce nu văzuse până atunci."
     "Un mâner de fier, ascuns într-o cavitate sub raft. Rece ca piatra udă."
+    show Penelope img1
     Penelope "Asta n-are ce căuta aici..."
 
     scene usa_dulap
     "Trage. Un zgomot gutural de metal pe lemn umple biblioteca. Un perete lateral se dă la o parte, scrâșnind din toate încheieturile."
     scene corridor_spre_colin
+    show Penelope img1
     "În spatele lui – un coridor îngust, care duce spre o cameră slab luminată."
     jump camera_lui_Colin_rosu
 
 label camera_lui_Colin_rosu:
     scene camera lui colin
+    show Penelope img1
     "Penelope rămase cu respirația tăiată. "
     "În spatele dulapului, nu o simplă încăpere, ci o lume pierdută: pereți albi pătați de umbre, o fereastră înțesată de iederă. "
-    "Și acolo, în scaunul cu rotile, un băiat palid cu ochi ca gheața sub lumina lunii."
+    show Colin img1 at right
+    "Și acolo, un băiat palid cu ochi ca gheața sub lumina lunii."
 
     stop music fadeout 1.0
 
@@ -220,18 +243,24 @@ label camera_lui_Colin_rosu:
 
 label rosu:
     Colin "Dar... ce cauți aici, de fapt?"
+    show Penelope img2
     menu:
         "Spune adevărul":
             jump adevar 
         "Spune altceva":
             jump alt_ceva
 label adevar:
+    hide Penelope img2
+    show Colin img2
+    show Penelope img1
     Colin "Și tu o vrei... Grădina. Toți o vor. Toți cred că o pot repara. Dar nu înțeleg nimic."
     Penelope "Eu nu vreau să iau nimic. Doar... să știu."
     Colin "Pleacă. Te rog."
     jump albastru
 
 label alt_ceva:
+    hide Penelope img2
+    show Penelope img1
     Penelope "Nu știu... Nu căutam nimic. M-a adus... cartea. Și... poate și cântecul tău."
     Colin "Tu ești prima persoană care mă ascultă. De fapt."
     "Vorbele se preling ușor, ca lumina de amurg: despre păsări care se opresc doar pe un geam anume, despre vise care se repetă și despre secrete care cresc ca florile."
@@ -242,18 +271,27 @@ label carte_albastra:
     "Cartea alunecă din mâna ei – ca și cum o forță nevăzută refuza să fie citită."
     "Căzu pe podea cu un ecou stins, iar în genunchi, când fata se aplecă să o ridice, observă ceva ce nu văzuse până atunci."
     "Un mâner de fier, ascuns într-o cavitate sub raft. Rece ca piatra udă."
+    show Penelope img1
     Penelope "Asta n-are ce căuta aici..."
 
     scene usa_dulap
+    show Penelope img1
     "Trage. Un zgomot gutural de metal pe lemn umple biblioteca. Un perete lateral se dă la o parte, scrâșnind din toate încheieturile."
+    scene corridor_spre_colin
+    show Penelope img1
     "În spatele lui – un coridor îngust, care duce spre o cameră slab luminată."
     jump camera_lui_Colin_albastru
 
 label camera_lui_Colin_albastru:
     scene camera lui colin
+    show Penelope img1
     "Penelope rămase cu respirația tăiată. "
-    "În spatele dulapului, nu o simplă încăpere, ci o lume pierdută: pereți albi pătați de umbre, o fereastră înțesată de iederă. "
-    "Și acolo, în scaunul cu rotile, un băiat palid cu ochi ca gheața sub lumina lunii."
+    "În spatele dulapului, nu o simplă încăpere, ci o lume pierdută: pereți albi pătați de umbre, o fereastră înțesată de iederă."
+    show Colin img1 at right
+    "Și acolo, un băiat palid cu ochi ca gheața sub lumina lunii."
+
+    stop music fadeout 1.0
+
     "Cânta încet, dar melodia s-a oprit brusc când a văzut-o."
     Colin "Cine ești? Cum ai ajuns aici?"
     "Vocea lui nu era furioasă. Era precaută. Ca și cum fiecare om pe care îl întâlnea putea să-i fure ceva — liniștea, secretele, sau grădina din vis."
@@ -262,17 +300,25 @@ label camera_lui_Colin_albastru:
     Penelope "N-am vrut să intru. Adică… am vrut. Dar n-am știut ce caut. Până acum."
 
     "Băiatul o fixează. Îi fuge privirea de la fața ei la coperta albastră, apoi înapoi."
+    hide Colin img1
+    show Colin img2 at right
     Colin "Aia nu... aia n-avea ce să fie scoasă. De ce ai ales tocmai pe ea?"
     Penelope "A căzut singură..."
     Colin "Toate cărțile cad. Nu toate trebuiau ridicate."
     "Băiatul se închide. Fruntea i se încrețește. Își trage pătură mai sus."
     Colin "Dacă nu mai vrei nimic, pleacă. Te rog."
+    hide Penelope img1
+    hide Colin img2
     jump albastru
 
 label albastru:
     scene corridor
+    show Penelope img1
     "Penelope pleacă. Ușa rămâne deschisă. Pe hol – unchiul."
+    show Craven img2 at right
     Craven "Ai fost acolo?! Ți-am interzis!"
+    hide Craven img2
+    hide Penelope img1
 
 label bad_end:
     scene bad_end
