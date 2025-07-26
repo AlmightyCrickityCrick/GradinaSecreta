@@ -15,13 +15,27 @@ image bad_end = im.Scale("bad end.png", 1920, 1080)
 image holl= im.Scale("holl.png", 1920, 1080)
 image corridor_spre_colin= im.Scale("corridor spre Colin.png", 1920, 1080)
 
+define audio.usa = "usa.mp3"
+define audio.chirp = "chirp.mp3"
+define audio.gradina = "gradina.mp3"
+define audio.hartia = "hartia.mp3"
+define audio.pian = "pian.mp3"
+define audio.rain = "rain.mp3"
+define audio.sertar = "sertar.mp3"
+define audio.sosirea = "sosirea.mp3"
+define audio.tufis = "tufis.mp3"
+define audio.usa_birou = "usa birou.mp3"
+
+
+
 
 label pre_istorie:
+    queue music background_song_0
     scene casa_parinteasca
 
     "Penelope Lennox nu a fost niciodată un copil dorit."
     "Sub soarele orbitor al Indiei, trăia ca un obiect uitat într-un sertar – văzută, dar niciodată aleasă."
-
+    jump alt_ceva
     jump mama
 
 label mama:
@@ -56,6 +70,7 @@ label ofiter:
 #sunet de crasnet si portile se deschid
 label casa:
     scene casa unchiului
+    play sound usa
     "Ușa grea a conacului scrâșni când Penelope o deschise, ca un geamăt de durere. Aerul împuțit de praf și ceară veche o învălui, amestecându-se cu umbra lungă a serii."
 
     scene holl
@@ -63,6 +78,7 @@ label casa:
     jump cip_cip
 
 label cip_cip:
+    play sound chirp
     "Cip-cip!"
     "O pasăre roșietică ciugulea un fir de iarbă pe pervaz. Ochii ei negri străluceau curios spre fată."
     Penelope "Ayah spunea că păsările aduc vești... Oare asta e semnul că am ajuns unde trebuie?"
@@ -70,7 +86,7 @@ label cip_cip:
 
 label corridor_cu_usa:
     scene corridor cu usa
-
+    play sound rain
     "Peste geam ploua când Domnul Craven – un văr îndepărtat – o studie fără să coboare jos. "
     "Ai înțeles regulile? - rostogoli el. - Nu deranja. Nu întreba. Nu plânge."
     Maid "El n-a mai vorbit cu nimeni de când Doamna Lily a murit... Nici măcar cu băiatul."
@@ -87,9 +103,11 @@ label camera_ep:
 
     call screen reassemble_puzzle
     
+    play audio hartia
     "Pe copertă, inițialele L.C. erau gravate cu cerneală roșie - ca sângele uscat. "
     "10 Iulie... Grădina noastră secretă a înflorit azi. Arhid spune că e periculos să o păzim, dar eu... - restul paginii era smulsă. "
     "Degetele i se înfiorară. Ce ascundea acest loc? "
+    stop audio
 
     "Vrei să cauți toate obiectele și să afli ce legătură are jurnalul cu grădina secretă?"
     menu:
@@ -108,6 +126,7 @@ label ce_inseamna:
 
 label birou:
     scene birou
+    play audio usa_birou
     "Ușa bine-uleiată a biroului alunecă în cadru cu un șuierat abia auzit. Aerul miroase a pergament vechi și fum stins. Cărțile aliniază pereții ca niște martori tăcuți. În colțul opus, un dulap masiv, din lemn înnegrit, înghite lumina. "
     "Apropiindu-se cu grijă de unul dintre numeroasele sertare, ea a tras de mâner."
     "Balamalele scârțâiau ușor, ca și cum ar fi încercat să-și ascundă secretul."
@@ -115,6 +134,8 @@ label birou:
 
 label sunet:
     scene birou
+    stop music fadeout 1.0
+    queue music pian
     "Și... acolo. Un sunet."
     "Nu un suspin. Nu un foșnet."
     "O melodie"
@@ -132,6 +153,7 @@ label sunet:
 
 label sertar:
     scene sertar
+    play audio sertar
     call screen search_game
 
     if is_over2 == True:
@@ -177,13 +199,17 @@ label camera_lui_Colin_rosu:
     "Penelope rămase cu respirația tăiată. "
     "În spatele dulapului, nu o simplă încăpere, ci o lume pierdută: pereți albi pătați de umbre, o fereastră înțesată de iederă. "
     "Și acolo, în scaunul cu rotile, un băiat palid cu ochi ca gheața sub lumina lunii."
+
+    stop music fadeout 1.0
+
     "Cânta încet, dar melodia s-a oprit brusc când a văzut-o."
     Colin "Cine ești? Cum ai ajuns aici?"
     "Vocea lui nu era furioasă. Era precaută. Ca și cum fiecare om pe care îl întâlnea putea să-i fure ceva — liniștea, secretele, sau grădina din vis."
     Penelope "Sunt Penelope. Tocmai am ajuns la conac. Și dacă nu întreb nimic și nu plâng, am voie să rămân. Așa mi s-a spus."
     Penelope "Au zis că sunt nepoata domnului Craven. Dar nimeni nu m-a chemat cu adevărat. Am... găsit o carte. A căzut. Apoi, un mâner."
     Penelope "N-am vrut să intru. Adică… am vrut. Dar n-am știut ce caut. Până acum."
-
+  
+    queue music background_song_0
     "Ochii băiatului se lărgesc. Se uită la cartea din mâna Penelopei ca la o păpușă din copilărie pierdută și regăsită."
     Colin "Cartea aceea... Era a mea. O citea mama când eram bolnav. Nu credeam că cineva o mai găsește. Tu... ai gust bun."
     jump rosu
