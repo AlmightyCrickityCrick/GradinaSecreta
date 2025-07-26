@@ -35,7 +35,6 @@ label pre_istorie:
 
     "Penelope Lennox nu a fost niciodată un copil dorit."
     "Sub soarele orbitor al Indiei, trăia ca un obiect uitat într-un sertar – văzută, dar niciodată aleasă."
-    jump alt_ceva
     jump mama
 
 label mama:
@@ -81,16 +80,18 @@ label cip_cip:
     play sound chirp
     "Cip-cip!"
     "O pasăre roșietică ciugulea un fir de iarbă pe pervaz. Ochii ei negri străluceau curios spre fată."
+    show Penelope img1
     Penelope "Ayah spunea că păsările aduc vești... Oare asta e semnul că am ajuns unde trebuie?"
     jump corridor_cu_usa
 
 label corridor_cu_usa:
     scene corridor cu usa
     play sound rain
+    show Craven img2
     "Peste geam ploua când Domnul Craven – un văr îndepărtat – o studie fără să coboare jos. "
     "Ai înțeles regulile? - rostogoli el. - Nu deranja. Nu întreba. Nu plânge."
-    Maid "El n-a mai vorbit cu nimeni de când Doamna Lily a murit... Nici măcar cu băiatul."
-    Maid "Aici vei sta de-acum."
+    Servitoare"El n-a mai vorbit cu nimeni de când Doamna Lily a murit... Nici măcar cu băiatul."
+    Servitoare "Aici vei sta de-acum."
 
 label camera_ep:
     scene camera_ep

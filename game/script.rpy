@@ -32,15 +32,20 @@ define audio.background_song_0 = "background song 0.mp3"
 define audio.background_song_1 = "background song 1.mp3"
 define audio.whispers_library = "whispers library.mp3"
 
-define Penelope = Character(name = "Penelope", color = "ffffff")
-define Mama = Character(name = "Mama", color = "ffffff")
-define Ofiter = Character(name = "Ofiter", color = "ffffff")
-define Maid = Character(name = "Maid", color = "ffffff")
-define Robin = Character(name = "Robin", color = "ffffff")
-define Craven = Character(name = "Domnul Craven", color = "ffffff")
-define Colin = Character(name = "Colin", color = "ffffff")
+image Craven img1 = im.Scale('characters/craven.png',1200,1000)
+image Craven img2 = im.Scale('characters/craven1.png',1200,1000)
+image Colin img1 = im.Scale('characters/colin.png',1200,1000)
+image Colin img2 = im.Scale('characters/colin book.png',1200,1000)
+image Penelope img1 = im.Scale('characters/penelope.png',1200,1000)
+image Penelope img2 = im.Scale('characters/penelope q.png',1200,1000)
+image Robin = im.Scale('characters/robin.png',1200,1000)
+image Servitoare = im.Scale('characters/servit.png',1200,1000)
 
-# The game starts here.
+
+
+
+
 
 label start:
     jump pre_istorie
+

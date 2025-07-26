@@ -13,7 +13,7 @@ label corridor:
     "Penelope nu atinse mâncarea de la micul dejun. Farfuria a rămas neatinsă, dar mâna ei, pe furiș, strecură o bucată de pâine în buzunarul rochiei. Poate pentru mai târziu. Poate pentru cineva care nu avea voie la masă."
     "Coridorul principal era întunecos, luminat doar de reflexele obosite ale soarelui printre draperii groase. Acolo, la cotitură, zări o servitoare — tânără, îngenuncheată, cu un teanc de rufe proaspăt spălate căzute în jurul ei."
     "Țesături albe, pătate ici-colo, se amestecau cu praful de pe podea."
-    Maid "Nu, nu, nu, nu, din nou... Domnul Craven o să fie furios..."
+    Servitoare "Nu, nu, nu, nu, din nou... Domnul Craven o să fie furios..."
     
     "Vrei să o ajuți pe servitoare să adune rufele căzute?"
     menu:
@@ -25,9 +25,9 @@ label corridor:
 
 label ajutor:
     "Penelope se aplecă fără cuvinte și adună o batistă căzută. Fata o privește uluită pentru o clipă, apoi roșește. Împreună, termină în tăcere."
-    Maid "Mulțumesc... n-ai fi avut de ce s-o faci."
-    Maid "Avea dreptate bătrâna Martha... poate nu ești chiar ca ceilalți."
-    Maid"(Șoptind, ca un gând spus prea tare)
+    Servitoare "Mulțumesc... n-ai fi avut de ce s-o faci."
+    Servitoare "Avea dreptate bătrâna Martha... poate nu ești chiar ca ceilalți."
+    Servitoare "(Șoptind, ca un gând spus prea tare)
     Într-o zi, chiar am văzut-o pe Doamna Lily ducând acolo o cheie... către grădină. Dar acum e totul încuiat. O fi pierdută pentru totdeauna."
 
     "Întrebi mai mult despre grădina secretă?"
@@ -46,7 +46,7 @@ label nu_ajuti:
 
 label intrebi_servitoarea:
     Penelope "Și... ai mai auzit pe cineva vorbind despre acea grădină? E chiar atât de... secretă?"
-    Maid "N-ar fi trebuit să mă fi auzit. Scuzați-mă, domnișoară."
+    Servitoare "N-ar fi trebuit să mă fi auzit. Scuzați-mă, domnișoară."
     " Fără alt cuvânt, se întoarce și pleacă în grabă, uitând un ciorap pe jos."
     "Seara, Penelope e chemată de unchiul ei. Ușa biroului troncăne greoi."
     jump bad_end_intrebari
