@@ -38,8 +38,8 @@ label ajutor:
 
 
 label nu_ajuti:
-    "Penelope trecu mai departe fără să spună nimic. Tălpile ei tăcură peste podeaua rece.
-În urmă, servitoarea rămase îngenuncheată, cu rușine pe obraz și ochii în podea."
+    """Penelope trecu mai departe fără să spună nimic. Tălpile ei tăcură peste podeaua rece.
+    În urmă, servitoarea rămase îngenuncheată, cu rușine pe obraz și ochii în podea."""
     jump corridor 
 
 
@@ -48,7 +48,7 @@ label intrebi_servitoarea:
     Servitoarea "N-ar fi trebuit să mă fi auzit. Scuzați-mă, domnișoară."
     " Fără alt cuvânt, se întoarce și pleacă în grabă, uitând un ciorap pe jos."
     "Seara, Penelope e chemată de unchiul ei. Ușa biroului troncăne greoi."
-        jump bad_end
+    jump bad_end
         
 label bad_end:
     Craven "Se pare că ai urechi prea mari pentru locuri închise. Ți-am spus să nu întrebi."
