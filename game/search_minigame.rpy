@@ -60,23 +60,28 @@ init python:
 
 screen search_game:
     
+    $ globals()['inventory'] = []
     default searchEl = SearchEl([ \
-        [("teddy bear.png",100,100),100,100,100,100], \
-        [("teddy bear.png",100,100),100,100,200,300], \
-        [("teddy bear.png",100,100),100,100,300,400], \
-        [("teddy bear.png",100,100),100,100,400,500], \
-        [("teddy bear.png",100,100),100,100,500,600] \
+        [("sertar/carte.png",100,100),100,100,100,100], \
+        [("sertar/cerneala.png",100,100),100,100,200,300], \
+        [("sertar/fotografie.png",100,100),100,100,300,400], \
+        [("sertar/harta.png",100,100),100,100,400,500], \
+        [("sertar/lenta.png",100,100),100,100,400,500], \
+        [("sertar/pana.png",100,100),100,100,400,500], \
+        [("sertar/scrisori.png",100,100),100,100,400,500], \
+        [("sertar/timbru.png",100,100),100,100,500,600] \
         ])
-    add "uncle_simple_garden_middle"
 
     add searchEl
 
 
 label search_minigame:
-    call screen search_game
 
-    if is_over2 == True:
-        if is_win2 == True:
-            "Ai gasit toate lucrurile!"
-        else:
-            "Timpul a expirat!"
+    jump sertar
+    # call screen search_game
+
+    # if is_over2 == True:
+    #     if is_win2 == True:
+    #         "Ai gasit toate lucrurile!"
+    #     else:
+    #         "Timpul a expirat!"

@@ -127,7 +127,14 @@ label sunet:
 #joc din sertar 
 label sertar:
     scene sertar
-    "joc"
+    call screen search_game
+
+    if is_over2 == True:
+        if is_win2 == True:
+            "Ai gasit toate lucrurile!"
+        else:
+            "Timpul a expirat!"
+
     jump sunet
 
 label dulap:
