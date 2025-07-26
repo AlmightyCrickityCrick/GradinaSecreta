@@ -43,4 +43,4 @@ define Colin = Character(name = "Colin", color = "ffffff")
 # The game starts here.
 
 label start:
-    jump prologue
+    jump pre_istorie
