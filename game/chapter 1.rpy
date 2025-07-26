@@ -86,8 +86,9 @@ label cip_cip:
 
 label corridor_cu_usa:
     scene corridor cu usa
+    show Penelope img1
     play sound rain
-    show Craven img2
+    show Craven img2 at right
     "Peste geam ploua când Domnul Craven – un văr îndepărtat – o studie fără să coboare jos. "
     "Ai înțeles regulile? - rostogoli el. - Nu deranja. Nu întreba. Nu plânge."
     Servitoare"El n-a mai vorbit cu nimeni de când Doamna Lily a murit... Nici măcar cu băiatul."
