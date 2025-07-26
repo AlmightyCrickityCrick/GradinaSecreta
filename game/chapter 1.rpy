@@ -28,7 +28,6 @@ define audio.usa_birou = "usa birou.mp3"
 
 
 
-
 label pre_istorie:
     queue music background_song_0
     scene casa_parinteasca
